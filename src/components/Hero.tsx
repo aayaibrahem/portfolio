@@ -1,10 +1,21 @@
-import { motion } from 'motion/react';
-import { Github, Linkedin, Mail, MapPin, Phone, ArrowDown, MessageCircle } from 'lucide-react';
-import { portfolioData } from '../data/portfolio';
+import { motion } from "motion/react";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  ArrowDown,
+  MessageCircle,
+} from "lucide-react";
+import { portfolioData } from "../data/portfolio";
 
 export default function Hero() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
@@ -15,7 +26,7 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -23,14 +34,18 @@ export default function Hero() {
           >
             Available for new opportunities
           </motion.span>
-          
+
           <h1 className="text-5xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 leading-tight">
-            Hi, I'm <span className="bg-gradient-to-r from-primary-500 to-indigo-500 bg-clip-text text-transparent">Aya Ibrahem</span>
+            Hi, I'm{" "}
+            <span className="bg-gradient-to-r from-primary-500 to-indigo-500 bg-clip-text text-transparent">
+              Aya Ibrahem
+            </span>
           </h1>
-          
+
           <p className="text-xl text-zinc-600 dark:text-zinc-400 mb-8 max-w-lg leading-relaxed">
-            Front-End Developer & Creative Designer<br />
-            I create responsive websites, stunning UI/UX designs, CVs, PPTs, and AI-powered digital content
+            Front-End Developer & Creative Designer
+            <br />I create responsive websites, stunning UI/UX designs, CVs,
+            PPTs, and AI-powered digital content
           </p>
 
           <div className="flex flex-wrap gap-4 mb-10">
@@ -89,9 +104,9 @@ export default function Hero() {
           className="relative"
         >
           <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl border-8 border-white dark:border-zinc-800 relative z-10">
-            <img 
-              src="https://picsum.photos/seed/aya/800/800" 
-              alt="Aya Ibrahem Kamel" 
+            <img
+              src="https://picsum.photos/seed/aya/800/800"
+              alt="Aya Ibrahem Kamel"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
