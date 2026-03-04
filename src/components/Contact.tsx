@@ -1,19 +1,29 @@
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Send, Download, MessageCircle } from 'lucide-react';
-import { portfolioData } from '../data/portfolio';
+import React, { useState } from "react";
+import { motion } from "motion/react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Download,
+  MessageCircle,
+} from "lucide-react";
+import { portfolioData } from "../data/portfolio";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const text = `Name: ${formData.name}%0AEmail: ${formData.email}%0AMessage: ${formData.message}`;
-    window.open(`https://wa.me/${portfolioData.whatsapp}?text=${text}`, '_blank');
+    window.open(
+      `https://wa.me/${portfolioData.whatsapp}?text=${text}`,
+      "_blank",
+    );
   };
 
   return (
@@ -40,15 +50,22 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-8">Contact Information</h3>
+            <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-8">
+              Contact Information
+            </h3>
             <div className="space-y-8">
               <div className="flex items-start gap-6">
                 <div className="w-12 h-12 rounded-2xl bg-primary-500/10 flex items-center justify-center text-primary-500 shrink-0">
                   <Mail size={24} />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-1">Email</p>
-                  <a href={`mailto:${portfolioData.email}`} className="text-lg font-medium text-zinc-800 dark:text-zinc-200 hover:text-primary-500 transition-colors">
+                  <p className="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-1">
+                    Email
+                  </p>
+                  <a
+                    href={`mailto:${portfolioData.email}`}
+                    className="text-lg font-medium text-zinc-800 dark:text-zinc-200 hover:text-primary-500 transition-colors"
+                  >
                     {portfolioData.email}
                   </a>
                 </div>
@@ -59,8 +76,15 @@ export default function Contact() {
                   <MessageCircle size={24} />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-1">WhatsApp</p>
-                  <a href={`https://wa.me/${portfolioData.whatsapp}`} target="_blank" rel="noopener noreferrer" className="text-lg font-medium text-zinc-800 dark:text-zinc-200 hover:text-emerald-500 transition-colors">
+                  <p className="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-1">
+                    WhatsApp
+                  </p>
+                  <a
+                    href={`https://wa.me/${portfolioData.whatsapp}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg font-medium text-zinc-800 dark:text-zinc-200 hover:text-emerald-500 transition-colors"
+                  >
                     {portfolioData.phone}
                   </a>
                 </div>
@@ -71,7 +95,9 @@ export default function Contact() {
                   <MapPin size={24} />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-1">Location</p>
+                  <p className="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-1">
+                    Location
+                  </p>
                   <p className="text-lg font-medium text-zinc-800 dark:text-zinc-200">
                     {portfolioData.location}
                   </p>
@@ -79,7 +105,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="mt-12">
+            {/* <div className="mt-12">
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -90,7 +116,7 @@ export default function Contact() {
                 <Download size={20} />
                 Download My CV
               </motion.a>
-            </div>
+            </div> */}
           </motion.div>
 
           <motion.div
@@ -102,35 +128,47 @@ export default function Contact() {
             <form className="space-y-6" onSubmit={handleWhatsAppSubmit}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-zinc-500 uppercase tracking-widest ml-1">Name</label>
-                  <input 
-                    type="text" 
+                  <label className="text-sm font-bold text-zinc-500 uppercase tracking-widest ml-1">
+                    Name
+                  </label>
+                  <input
+                    type="text"
                     required
                     value={formData.name}
-                    onChange={e => setFormData({...formData, name: e.target.value})}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                     placeholder="John Doe"
                     className="w-full px-6 py-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-all dark:text-white"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-zinc-500 uppercase tracking-widest ml-1">Email</label>
-                  <input 
-                    type="email" 
+                  <label className="text-sm font-bold text-zinc-500 uppercase tracking-widest ml-1">
+                    Email
+                  </label>
+                  <input
+                    type="email"
                     required
                     value={formData.email}
-                    onChange={e => setFormData({...formData, email: e.target.value})}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                     placeholder="john@example.com"
                     className="w-full px-6 py-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-all dark:text-white"
                   />
                 </div>
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-bold text-zinc-500 uppercase tracking-widest ml-1">Message</label>
-                <textarea 
+                <label className="text-sm font-bold text-zinc-500 uppercase tracking-widest ml-1">
+                  Message
+                </label>
+                <textarea
                   rows={5}
                   required
                   value={formData.message}
-                  onChange={e => setFormData({...formData, message: e.target.value})}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
                   placeholder="Tell me about your project..."
                   className="w-full px-6 py-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-all dark:text-white resize-none"
                 />
